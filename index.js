@@ -21,7 +21,7 @@ const generateToken = require('./utili/JWT.js');
 const sendVerificationMail = require('./utili/verificationMail.js');
 
 // some variables
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 
 MONGO_URI=process.env.MONGO_URI
 // DB connection
