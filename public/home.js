@@ -41,7 +41,7 @@ function handleClick(event){
             .then(res => {
                 console.log("Registration form is loaded successfully");
                 // document.body.innerHTML = res.data;
-                window.location.href = "http://localhost:8000/register"
+                window.location.href = "/register"
             })
             .catch(err => {
                 console.error("Error loading registration form:", err);
@@ -53,7 +53,7 @@ function handleClick(event){
         axios.get('/login')
         .then(res => {
             console.log("Login form is loaded successfully");
-            window.location.href = "http://localhost:8000/login"
+            window.location.href = "/login"
         })
         .catch(err => {
             console.error("Error in loading login form: ", JSON.stringify(err));
