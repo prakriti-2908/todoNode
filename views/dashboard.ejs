@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000; /* Ensures the navbar stays on top */
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .navbar .nav-links button:hover {
+            background-color: #555;
+        }
+        .todo-container {
+            margin: 80px auto 40px; /* Adjust margin to account for sticky navbar */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .todo-container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .todo-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .todo-container input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .todo-container button {
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .todo-container button:hover {
+            background-color: #333;
+        }
+        .todo-list {
+            margin-top: 20px;
+            text-align: left;
+            padding-left: 0;
+        }
+        .todo-list li {
+            background-color: #eee;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            list-style-type: none;
+            font-size: 16px;
+        }
+        .todos {
+            display: flex;
+            justify-content: space-between;
+            max-width: 80vw;
+            margin: auto;
+            margin-top: 40px;
+        }
+        .todos ul {
+            width: 100%;
+            padding-left: 0;
+        }
+        .todos ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #fff;
+        }
+        .todos ul li button {
+            background-color: transparent;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .todos ul li button:hover {
+            background-color: #f0f0f0;
+        }
+        #showMore {
+            background-color: #0d7c38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 130px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #showMore:hover {
+            background-color: #0b5d2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Todo App</h1>
+        <div class="nav-links">
+            <button id="home">
+                Home
+            </button>
+            <button id="logout">Logout</button>
+            <button id="deleteAccount">Delete Account</button>
+        </div>
+    </div>
+    <div class="todo-container">
+        <form id="todo-form">
+            <input type="text" id="todo-input" name="todo" placeholder="Add a new todo" required>
+            <button type="submit" class="create">Add Todo</button>
+        </form>
+        <ul class="todo-list" id="todo-list"></ul>
+    </div>
+    <div class="todos">
+        <ul id="todoList"></ul>
+    </div>
+    <input type="submit" id="showMore" value="Show More">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
